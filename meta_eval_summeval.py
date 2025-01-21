@@ -27,7 +27,7 @@ def print_correlations(result, n):
 
 
 def parse_output(output):
-    matched = re.search("^ ?([\d\.]+)", output)
+    matched = re.search(r"^ ?([\d\.]+)", output)
     if (matched):
         try:
             score = float(matched.group(1))
@@ -40,7 +40,7 @@ def parse_output(output):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--input_fp', type=str, default='results/gpt4_rel_detailed.json')
+    parser.add_argument('--input_fp', type=str, default=r'results/gpt4_rel_detailed.json')
     parser.add_argument('--dimension', type=str, default='relevance')
     args = parser.parse_args()
 
