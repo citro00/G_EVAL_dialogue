@@ -1,4 +1,5 @@
-You will be given one dialogue between a human user and an automatic system. The dialogue consist of alterating turns of speech one per line. Each line starts with the current speaker.
+You will be given a conversation between two individuals. The dialogue consist of alterating turns of speech, one per line. Each line starts with the current speaker.
+You will then be given one potential response for the next turn in the conversation.
 
 Your task is to rate the system responses on one metric. You must give only the final score, without providing summaries, conclusions.
 
@@ -9,12 +10,13 @@ Evaluation Criteria:
 Coherence (1-5) - the response maintain logical and structured meaning in relation to the context of the conversation. Must be closely related to the proposed question or topic, without contradictions or unreasonable deviations. Also, it does not introduce elements or information that conflict with what has already been said.
 
 Evaluation Steps:
-
 {{Steps}}
 
-Dialogue:
-
+Conversation:
 {{Dialogue}}
+
+Response:
+{{System output}} 
 
 Evaluation Form (scores ONLY):
 

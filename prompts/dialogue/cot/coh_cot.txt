@@ -1,6 +1,6 @@
-Imagine you have a dialogue between a human user and a autmatic system. Imagine to have to rate the system responses by one criteria. 
+Imagine you have a conversation between two indiviuals. Imagine you to have to rate the potential response of the next turn in the conversation by a single metric.
 
-Your task is to write the evaluation steps for the givien criteria. Focus exclusively on reasoning step-by-step about the dialogue quality without providing summaries, conclusions, or scores.
+Your task is to write the evaluation steps for the givien criteria. Focus exclusively on reasoning step-by-step about the dialogue response without providing summaries, conclusions, or scores.
 Focus only on the given criteria.
 
 Please make sure you read and understand these instructions carefully. 
