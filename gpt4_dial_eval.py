@@ -9,7 +9,7 @@ if __name__ == '__main__':
 
     argparser = argparse.ArgumentParser()
     argparser.add_argument('--prompt-fp', type=str, default='prompts/dialogue/eval/coh_prompt.txt')
-    argparser.add_argument('--save_fp', type=str, default='results/gpt4_con_detailed_openai.json')
+    argparser.add_argument('--save-fp', type=str, default='results/gpt4_con_detailed_openai.json')
     argparser.add_argument('--summeval-fp', type=str, default='data/transformed_data.json')
     argparser.add_argument('--model', type=str, default='Llama 3 8B Instruct')
     argparser.add_argument('--cot-prompt', type=str, default='prompts/dialogue/cot_prompt.txt')
@@ -36,9 +36,11 @@ if __name__ == '__main__':
     
     for instance in tqdm.tqdm(topical_chat):
         turns = instance['turns']
-        dialogue = [f"{item['speaker']}: {item['utterance']}" for item in turns]
-        dialogue = "\n".join(dialogue)
+        system_output = instance['system_output']
+        dialogue = [f"{item['speaker']}: {item['utterance']}  \n" for item in turns]
+        dialogue = "".join(dialogue)
         cur_prompt = prompt.replace('{{Dialogue}}', dialogue)
+        cur_prompt = cur_prompt.replace('{{System output}}', system_output)
         instance['prompt'] = cur_prompt
         while True:
             try:
@@ -59,6 +61,7 @@ if __name__ == '__main__':
 
                 all_responses = [_response.choices[i].message.content for i in
                                  range(len(_response.choices))]
+                tqdm.tqdm.write(f"Response: {all_responses}")
                 instance['all_responses'] = all_responses
                 new_json.append(instance)
                 ct += 1
