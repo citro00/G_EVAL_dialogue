@@ -3,15 +3,18 @@ import json
 import argparse
 import tqdm
 import time
+from automatic_cot import *
 
 if __name__ == '__main__':
 
     argparser = argparse.ArgumentParser()
-    argparser.add_argument('--prompt_fp', type=str, default='prompts/summeval/dialogue_promt.txt')
+    argparser.add_argument('--prompt-fp', type=str, default='prompts/topical_chat/dialogue_prompt.txt')
     argparser.add_argument('--save_fp', type=str, default='results/gpt4_con_detailed_openai.json')
-    argparser.add_argument('--summeval_fp', type=str, default='data/transformed_data.json')
+    argparser.add_argument('--summeval-fp', type=str, default='data/transformed_data.json')
     argparser.add_argument('--model', type=str, default='Llama 3 8B Instruct')
+    argparser.add_argument('--cot-prompt', type=str, default='prompts/dialogue/cot_prompt.txt')
     args = argparser.parse_args()
+    
     openai.api_key = "not needed for a local LLM"
     openai.base_url = "http://localhost:4891/v1/"
 
@@ -21,6 +24,10 @@ if __name__ == '__main__':
     ct, ignore = 0, 0
 
     new_json = []
+    
+    eval_steps = generate_cot(model, args.cot_prompt)
+    prompt = prompt.replace('{{Evaluation steps}}', eval_steps)
+    
     for instance in tqdm.tqdm(topical_chat):
         turns = instance['turns']
         dialogue = [f"{item['speaker']}: {item['utterance']}" for item in turns]

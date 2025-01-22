@@ -1,0 +1,13 @@
+Imagine you have a dialogue between a human user and a autmatic system. Imagine to have to rate the system responses by one criteria. 
+
+Your task is to write the evaluation steps for the givien criteria. Focus exclusively on reasoning step-by-step about the dialogue quality without providing summaries, conclusions, or scores.
+Focus only on the given criteria.
+
+
+Please make sure you read and understand these instructions carefully. Don't write the introduction. Don't write the conclusion
+
+Evaluation Criteria:
+
+Engagingness (1-3) Is the response dull/interesting?
+
+Evaluation Steps:
