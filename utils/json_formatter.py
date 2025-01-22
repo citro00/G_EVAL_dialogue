@@ -15,25 +15,27 @@ try:
     contexts = original_data["contexts"]
     scores = original_data["scores"]
     models = original_data["models"]
+    responses = original_data["responses"]  
 except KeyError as e:
     raise ValueError(f"Chiave mancante nel dataset JSON: {e}")
 
-# Verifica che le liste abbiano almeno un elemento
-if not (len(contexts) and len(scores) and len(models)):
+
+if not (len(contexts) and len(scores) and len(models) and len(responses)):
     raise ValueError("Una o più liste sono vuote nel dataset JSON.")
 
 # Creazione del nuovo dataset
 transformed_data = []
-dialog_id = 1  # Inizializza dialog_id incrementale
+dialog_id = 1 
 
-# Trasforma i dati accedendo dinamicamente a score e models
+# Trasforma i dati accedendo dinamicamente a score, models e responses
 for idx, context in enumerate(contexts):
     try:
         score = scores[idx]
         model = models[idx]
+        response = responses[idx]
     except IndexError:
         raise ValueError(
-            f"Non ci sono abbastanza valori di 'scores' o 'models' per il dialogo {idx + 1}."
+            f"Non ci sono abbastanza valori di 'scores', 'models' o 'responses' per il dialogo {idx + 1}."
         )
 
     # Crea il dialogo
@@ -41,7 +43,8 @@ for idx, context in enumerate(contexts):
         "dialog_id": str(dialog_id),
         "turns": [],
         "score": score,
-        "system_id": model,  # Rinominato 'models' in 'system_id' durante la generazione
+        "system_id": model,  
+        "system output": response  
     }
 
     for i, utterance in enumerate(context):
