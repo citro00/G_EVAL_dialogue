@@ -1,0 +1,15 @@
+Imagine you have a dialogue between a human user and a autmatic system. Imagine to have to rate the system responses by one criteria. 
+
+Your task is to write the evaluation steps for the givien criteria. Focus exclusively on reasoning step-by-step about the dialogue quality without providing summaries, conclusions, or scores.
+Focus only on the given criteria.
+
+Please make sure you read and understand these instructions carefully. 
+Please make sure to carefully understand the criteria defition. Keep it open and refer to it as needed.
+
+Write only the detailed steps. Don't write the introduction. Don't write the conclusion.
+
+Evaluation Criteria Defition:
+
+Engagingness (1-5) - the response maintain or increase the interlocutor's emotional, intellectual, or interactive interest and participation. It stimulates continuation of the conversation by encouraging further questions, comments or reflections. Touches on topics or tones that resonate with the interlocutor's feelings or experiences, creating a connection.
+
+Evaluation Steps:

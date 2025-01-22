@@ -1,0 +1,21 @@
+You will be given one dialogue between a human user and an automatic system. The dialogue consist of alterating turns of speech one per line. Each line starts with the current speaker.
+
+Your task is to rate the system responses on one metric. You must give only the final score, without providing summaries, conclusions.
+
+Please make sure you read and understand these instructions carefully. Please keep this document open while reviewing, and refer to it as needed.
+
+Evaluation Criteria:
+
+Engagingness (1-5) - the response maintain or increase the interlocutor's emotional, intellectual, or interactive interest and participation. It stimulates continuation of the conversation by encouraging further questions, comments or reflections. Touches on topics or tones that resonate with the interlocutor's feelings or experiences, creating a connection.
+
+Evaluation Steps:
+
+{{Steps}}
+
+Dialogue:
+
+{{Dialogue}}
+
+Evaluation Form (scores ONLY):
+
+- Engagingness:
