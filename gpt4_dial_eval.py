@@ -9,11 +9,11 @@ from utils.handler_outlier import *
 if __name__ == '__main__':
 
     argparser = argparse.ArgumentParser()
-    argparser.add_argument('--prompt-fp', type=str, default='prompts/dialogue/eval/coh_prompt.txt')
+    argparser.add_argument('--prompt-fp', type=str, default='prompts/eval/coh_prompt.txt')
     argparser.add_argument('--save-fp', type=str, default='results/gpt4_con_detailed_openai.json')
     argparser.add_argument('--summeval-fp', type=str, default='data/transformed_data.json')
     argparser.add_argument('--model', type=str, default='Llama 3 8B Instruct')
-    argparser.add_argument('--cot-prompt', type=str, default='prompts/dialogue/cot_prompt.txt')
+    argparser.add_argument('--cot-prompt', type=str, default='prompts/cot/coh_cot.txt')
     argparser.add_argument('--instances', type=int, default=None)
 
     args = argparser.parse_args()
@@ -54,7 +54,7 @@ if __name__ == '__main__':
                     frequency_penalty=0,
                     presence_penalty=0,
                     stop=None,
-                    # logprobs=40,
+                    #logprobs=True,
                     n=20,
                 )
 
