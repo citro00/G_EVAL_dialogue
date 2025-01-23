@@ -4,6 +4,7 @@ import argparse
 import tqdm
 import time
 from automatic_cot import *
+from utils.handler_outlier import *
 
 if __name__ == '__main__':
 
@@ -54,13 +55,15 @@ if __name__ == '__main__':
                     presence_penalty=0,
                     stop=None,
                     # logprobs=40,
-                    n=1,
+                    n=20,
                 )
 
                 time.sleep(0.5)
 
                 all_responses = [_response.choices[i].message.content for i in
-                                 range(len(_response.choices))]
+                                 range( len(_response.choices))]
+                
+                all_responses = handler_outlier(all_responses)
                 tqdm.tqdm.write(f"Response: {all_responses}")
                 instance['all_responses'] = all_responses
                 new_json.append(instance)

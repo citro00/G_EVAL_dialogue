@@ -1,7 +1,7 @@
 You will be given a conversation between two individuals. The dialogue consist of alterating turns of speech, one per line. Each line starts with the current speaker.
 You will then be given one potential response for the next turn in the conversation.
 
-Your task is to rate the system responses on one metric. You must give only the final score, without providing summaries, conclusions.
+Your task is to rate the system responses on one metric. You must give only the final score as integer, without providing summaries, conclusions.
 
 Please make sure you read and understand these instructions carefully. Please keep this document open while reviewing, and refer to it as needed.
 
@@ -10,12 +10,15 @@ Evaluation Criteria:
 Naturalness (1-5) - the response seem spontaneous, fluid and appropriate in the context of the conversation. It connects logically to the previous topic or question. Avoids interruptions, repetition or unnatural constructions that might make communication seem forced or mechanical.
 
 Evaluation Steps:
+
 {{Steps}}
 
 Conversation:
+
 {{Dialogue}}
 
 Response:
+
 {{System output}} 
 
 Evaluation Form (scores ONLY):
