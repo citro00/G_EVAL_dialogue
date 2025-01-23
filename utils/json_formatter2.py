@@ -1,10 +1,11 @@
 import json
 import os
 
-# Percorsi per file sul Desktop
-desktop_path = os.path.join(os.path.expanduser("~"), "Desktop")
-input_file = os.path.join(desktop_path, "dstc9_data.json")
-output_file = os.path.join(desktop_path, "transformed_data.json")
+
+script_dir = os.path.dirname(os.path.abspath(__file__)) 
+data_path = os.path.join(script_dir, "../data") 
+input_file = os.path.join(data_path, "dstc9_data.json")
+output_file = os.path.join(data_path, "transformed_data2.json")
 
 # Carica i dati
 with open(input_file, "r", encoding="utf-8") as file:
