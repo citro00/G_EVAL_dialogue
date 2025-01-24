@@ -1,13 +1,12 @@
 You will be given a conversation between two individuals: a human user and and an automatic system. The dialogue consist of alterating turns of speech, one per line. Each line starts with the current speaker.
 
-Your task is to rate the system responses on one metric. You must give only the final score as an integer, without providing summaries, conclusions.
+Your task is to rate the system responses on one metric. You must give only the final score as an integer, without providing summaries or conclusions.
 
-Please make sure you read and understand these instructions carefully.  Please make sure to fully keep this document open while reviewing, and refer to it as needed.
+Please make sure you read and understand these instructions carefully.  Please make sure to follow all the evaluation steps. Keep this document open while reviewing, and refer to it as needed.
 
 Evaluation Criteria:
 
-Overall Quality (1-5): The responses are of good quality? 
-Responses must maintains logical meaning in relation to the context of the conversation and connects logically to the previous topic or question without contradictions or deviations. Seems spontaneous, fluid and appropriate in the context of the conversation. Avoids interruptions, repetition or unnatural constructions that might make communication seem forced or mechanical. Maintains or increase the interlocutor's emotional, intellectual, or interactive interest and participation. Stimulates continuation of the conversation by encouraging further questions, comments or reflections. Answers should be rooted in reality making the content credible, relies on accurate and verifiable information, avoiding inaccurate or erroneous statements. Avoids responses that are abstract or disconnected from the interlocutor's actual, practical situation.
+Overall Quality (1-5): responses must maintains logical meaning in relation to the context of the conversation and connect logically to the previous topic or question without contradictions or deviations. Seem spontaneous, fluid and appropriate in the context of the conversation. Avoid interruptions, repetition or unnatural constructions that might make communication seem forced or mechanical. Maintain or increase the interlocutor's emotional, intellectual, or interactive interest and participation. Stimulate continuation of the conversation by encouraging further questions, comments or reflections. Answers should be rooted in reality making the content credible, relies on accurate and verifiable information, avoiding inaccurate or erroneous statements and must not be abstract or disconnected from the interlocutor's actual, practical situation.
 
 Evaluation Steps:
 
