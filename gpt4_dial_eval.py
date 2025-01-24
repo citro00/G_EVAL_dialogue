@@ -9,11 +9,11 @@ from utils.handler_outlier import *
 if __name__ == '__main__':
 
     argparser = argparse.ArgumentParser()
-    argparser.add_argument('--prompt-fp', type=str, default='prompts/eval/coh_prompt.txt')
+    argparser.add_argument('--prompt-fp', type=str, default='prompts/dialogue/overall_prompt_dialogue.txt')
     argparser.add_argument('--save-fp', type=str, default='results/llama_overall_detailed_dial.json')
-    argparser.add_argument('--summeval-fp', type=str, default='data/transformed_data.json')
+    argparser.add_argument('--summeval-fp', type=str, default='data/transformed_data_dial.json')
     argparser.add_argument('--model', type=str, default='Llama 3 8B Instruct')
-    argparser.add_argument('--cot-prompt', type=str, default='prompts/cot/coh_cot.txt')
+    argparser.add_argument('--cot-prompt', type=str, default='prompts/dialogue/overall_cot_dialogue.txt')
     argparser.add_argument('--instances', type=int, default=None)
 
     args = argparser.parse_args()
@@ -39,11 +39,15 @@ if __name__ == '__main__':
     for instance in tqdm.tqdm(topical_chat):
         ct_tmp += 1
         turns = instance['turns']
-        system_output = instance['system_output']
+        
+        # Commentare la lina seguente se l'esecuzione è sull'intero dialogo. Nel caso della valutazione di risposta lasciare attiva
+        #system_output = instance['system_output']
         dialogue = [f"{item['speaker']}: {item['utterance']}  \n" for item in turns]
         dialogue = "".join(dialogue)
         cur_prompt = prompt.replace('{{Dialogue}}', dialogue)
-        cur_prompt = cur_prompt.replace('{{System output}}', system_output)
+        
+        # Commentare la lina seguente se l'esecuzione è sull'intero dialogo. Nel caso della valutazione di risposta lasciare attiva
+        #cur_prompt = cur_prompt.replace('{{System output}}', system_output)
         instance['prompt'] = cur_prompt
         while True:
             try:
@@ -81,8 +85,5 @@ if __name__ == '__main__':
                     print('ignored', ignore)
 
                     break
-        tqdm.tqdm.write(f"Total iteration: {ct_tmp}; Ok_iteration: {ct}; Ignored: {ignore}")
-    print('ignored total', ignore)
-    print(f"len(new_json): {len(new_json)}")
     with open(args.save_fp, 'w') as f:
         json.dump(new_json, f, indent=4)
