@@ -7,41 +7,28 @@ import argparse
 
 def calculate_correlation(pred_score, human_score, result):
     assert len(pred_score) == len(human_score)
+    
+    only_pred_score = [val for val in pred_score.values()]
+    only_human_score = [val for val in human_score.values()]
 
-    if (len(result) == 0):
-        result = {'pearson': 0, 'spearman': 0, 'kendalltau': 0}
-    result['pearson'] += pearsonr(pred_score, human_score)[0]
-    result['spearman'] += spearmanr(pred_score, human_score)[0]
-    result['kendalltau'] += kendalltau(pred_score, human_score)[0]
+    result['pearson'] += pearsonr(only_pred_score, only_human_score)[0]
+    result['spearman'] += spearmanr(only_pred_score, only_human_score)[0]
+    result['kendalltau'] += kendalltau(only_pred_score, only_human_score)[0]
 
     return result
 
 
-def print_correlations(result, n):
+def print_correlations(result):
     table = PrettyTable(['Pearson', 'Spearman', 'Kendall'])
-    if (n == 0):
-        n = 1
+
     table.add_row(
-        [round(result['pearson'] / n, 4), round(result['spearman'] / n, 4), round(result['kendalltau'] / n, 4)])
+        [round(result['pearson'], 4), round(result['spearman'], 4), round(result['kendalltau'], 4)])
     print(table)
-
-
-def parse_output(output):
-    matched = re.search(r"^ ?([\d\.]+)", output)
-    if (matched):
-        try:
-            score = float(matched.group(1))
-        except:
-            score = 0
-    else:
-        score = 0
-    return score
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--input_fp', type=str, default=r'results/gpt4_rel_detailed.json')
-    parser.add_argument('--dimension', type=str, default='relevance')
+    parser.add_argument('--input_fp', type=str, default='results/overall_mean.json')
     args = parser.parse_args()
 
     jobj = json.load(open(args.input_fp))
@@ -49,29 +36,24 @@ if __name__ == '__main__':
 
     print("Calculating correlation for G-Eval")
     for item in jobj:
-        doc_id = item["doc_id"]
-        if (doc_id not in pred_scores):
-            pred_scores[doc_id] = []
-            human_scores[doc_id] = []
+        dialog_id = item["dialog_id"]
+        
+        pred_scores[dialog_id] = 0
+        human_scores[dialog_id] = 0
 
-        all_responses = item["all_responses"]
-        all_scores = [parse_output(x) for x in all_responses]
-        score = sum(all_scores) / len(all_scores)
+        predicted_score = item["predicted_score"]
 
-        pred_scores[doc_id].append(score)
-        human_scores[doc_id].append(item['scores'][args.dimension])
+        pred_scores[dialog_id] = predicted_score
+        human_scores[dialog_id] = item['score']
 
     print('len(pred_scores): {}'.format(len(pred_scores)))
     print('len(human_scores): {}'.format(len(human_scores)))
 
     results = {'pearson': 0, 'spearman': 0, 'kendalltau': 0}
-    d_ctr = 0
-    for doc_id in pred_scores:
-        pred_scores_doc = pred_scores[doc_id]
-        human_scores_doc = human_scores[doc_id]
-        if (len(set(human_scores_doc)) <= 1) or (len(set(pred_scores_doc)) <= 1):
-            continue
 
-        results = calculate_correlation(pred_scores_doc, human_scores_doc, results)
-        d_ctr += 1
-    print_correlations(results, n=d_ctr)
+    if (len(pred_scores) > 1) or (len(human_scores) > 1):
+        results = calculate_correlation(pred_scores, human_scores, results)
+    else:
+        print("Impossibile calcolare le metriche (dati mancanti)")
+
+    print_correlations(results)

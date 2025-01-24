@@ -10,7 +10,7 @@ if __name__ == '__main__':
 
     argparser = argparse.ArgumentParser()
     argparser.add_argument('--prompt-fp', type=str, default='prompts/eval/coh_prompt.txt')
-    argparser.add_argument('--save-fp', type=str, default='results/gpt4_con_detailed_openai.json')
+    argparser.add_argument('--save-fp', type=str, default='results/llama_overall_detailed_dial.json')
     argparser.add_argument('--summeval-fp', type=str, default='data/transformed_data.json')
     argparser.add_argument('--model', type=str, default='Llama 3 8B Instruct')
     argparser.add_argument('--cot-prompt', type=str, default='prompts/cot/coh_cot.txt')
@@ -34,8 +34,10 @@ if __name__ == '__main__':
     
     eval_steps = generate_cot(model, args.cot_prompt)
     prompt = prompt.replace('{{Steps}}', eval_steps)
-    
+    print(f"len(topical_chat): {len(topical_chat)}")
+    ct_tmp = 0
     for instance in tqdm.tqdm(topical_chat):
+        ct_tmp += 1
         turns = instance['turns']
         system_output = instance['system_output']
         dialogue = [f"{item['speaker']}: {item['utterance']}  \n" for item in turns]
@@ -58,7 +60,7 @@ if __name__ == '__main__':
                     n=20,
                 )
 
-                time.sleep(0.5)
+                #time.sleep(0.5)
 
                 all_responses = [_response.choices[i].message.content for i in
                                  range( len(_response.choices))]
@@ -68,6 +70,7 @@ if __name__ == '__main__':
                 instance['all_responses'] = all_responses
                 new_json.append(instance)
                 ct += 1
+                
                 break
             except Exception as e:
                 print(e)
@@ -78,7 +81,8 @@ if __name__ == '__main__':
                     print('ignored', ignore)
 
                     break
-
+        tqdm.tqdm.write(f"Total iteration: {ct_tmp}; Ok_iteration: {ct}; Ignored: {ignore}")
     print('ignored total', ignore)
+    print(f"len(new_json): {len(new_json)}")
     with open(args.save_fp, 'w') as f:
         json.dump(new_json, f, indent=4)

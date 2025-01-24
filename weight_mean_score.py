@@ -37,12 +37,15 @@ def weight_mean_score(ds):
 if __name__=='__main__':
     
     argparser = argparse.ArgumentParser()
-    argparser.add_argument('--result', type=str)
-    argparser.add_argument('--output-fp', type=str)
+    argparser.add_argument('--result', type=str, default="results/llama_overall_detailed_dial.json")
+    argparser.add_argument('--output-fp', type=str, default="results/overall_mean.json")
     args = argparser.parse_args()
     
     ds = json.load(open(args.result))
+    print(f"len(ds): {len(ds)}")
     new_ds = weight_mean_score(ds)
+    
+    print(f"len(new_ds): {len(new_ds)}")
     
     with open(args.output_fp, 'w') as fp:
         json.dump(new_ds, fp)
