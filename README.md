@@ -59,17 +59,17 @@ $$ p(s_i) = \frac{\text{conteggio di } s_i}{\text{numero totale di risposte}} $$
   Formule utilizzate:
   - **Pearson:**
 
-    $$ r = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^n (x_i - \bar{x})^2 \sum_{i=1}^n (y_i - \bar{y})^2}} $$
+    $$r = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^n (x_i - \bar{x})^2 \sum_{i=1}^n (y_i - \bar{y})^2}}$$
     
   - **Spearman:**
 
-    $$ \rho = 1 - \frac{6 \sum d_i^2}{n(n^2 - 1)} $$
+    $$\rho = 1 - \frac{6 \sum d_i^2}{n(n^2 - 1)}$$
  
     Dove $d_i$ è la differenza tra i ranghi di ogni coppia.
 
   - **Kendall-Tau:**
     
-    $$ \tau = \frac{C - D}{\sqrt{(C + D + T_x)(C + D + T_y)}} $$
+    $$\tau = \frac{C - D}{\sqrt{(C + D + T_x)(C + D + T_y)}}$$
     
     Dove $C$ è il numero di coppie concordanti, $D$ è il numero di coppie discordanti, e $T_x$, $T_y$ sono i legami.
 
