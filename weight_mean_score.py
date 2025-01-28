@@ -2,8 +2,27 @@ import json
 import argparse
 import os
 
+def get_probability(scores):
+    probabilities = {}
+    scores_set = set(scores)
+    
+    for score in scores_set:
+        probability = scores.count(score) / len(scores)
+        probabilities[score] = probability
+        
+    return probabilities
+        
+        
+
 def weight_mean_score(ds):
     new_ds = []
+    
+    all_scores = []
+    for item in ds:
+        for score in item['all_responses']:
+            all_scores.append(score)
+            
+    score_probablities = get_probability(all_scores)
 
     for item in ds:
         # Per ogni dialogo nel ds
@@ -13,7 +32,7 @@ def weight_mean_score(ds):
         # Prende tutte le n valutazioni del modello per il dialogo corrente
         all_responses = item['all_responses']
 
-        # Crea l'insieme algebrico degli scores
+        """# Crea l'insieme algebrico degli scores
         scores = set(all_responses)
         score_probablities = []
         
@@ -26,7 +45,11 @@ def weight_mean_score(ds):
         weight_mean = 0
         for score, probability in score_probablities:
             # Calcolo della media pesata degli n score generati
-            weight_mean += score*probability
+            weight_mean += score*probability"""
+            
+        weight_mean = 0
+        for score in all_responses:
+            weight_mean += score*(score_probablities[score])
 
 
         new_item['predicted_score'] = weight_mean

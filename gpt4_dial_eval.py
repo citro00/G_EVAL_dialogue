@@ -33,6 +33,7 @@ if __name__ == '__main__':
     new_json = []
     
     eval_steps = generate_cot(model, args.cot_prompt)
+    print(f"Steps: {eval_steps}")
     prompt = prompt.replace('{{Steps}}', eval_steps)
     print(f"len(topical_chat): {len(topical_chat)}")
     ct_tmp = 0
@@ -60,6 +61,7 @@ if __name__ == '__main__':
                     frequency_penalty=0,
                     presence_penalty=0,
                     stop=None,
+                    stream=False,
                     #logprobs=True,
                     n=20,
                 )

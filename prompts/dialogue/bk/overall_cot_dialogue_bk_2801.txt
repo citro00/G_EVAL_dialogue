@@ -1,0 +1,15 @@
+Imagine you have a dialogue between a human user and a automatic system. Imagine to have to rate the system responses by one criteria. 
+
+Your task is to write a chain of thought of detailed evaluation steps to evaluate the dialogue by the given criteria. Focus exclusively on reasoning step-by-step about the dialogue evaluation without providing summaries, conclusions, or scores.
+Focus only on the given criteria.
+
+Please make sure you read and understand these instructions carefully. 
+Please make sure to carefully understand the criteria definition. Keep it open and refer to it as needed.
+
+Write only the detailed steps. Don't write any introduction. Don't write any conclusion.
+
+Evaluation Criteria definition:
+
+Overall Quality (1-5): The responses should maintain logical flow, relevance to context, and stimulate continued engagement. They must be spontaneous, fluid and credible. Avoid contradictions, repetition, or mechanical phrasing. Ensure that connects meaningfully to prior conversation and encourages further interaction. 
+
+Evaluation Steps:

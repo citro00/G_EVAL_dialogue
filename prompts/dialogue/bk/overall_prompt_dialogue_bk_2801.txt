@@ -1,0 +1,27 @@
+You will be given a conversation between two individuals: a human user and and an automatic system. The dialogue consist of alterating turns of speech, one per line. Each line starts with the current speaker.
+
+Your task is to rate the system responses on one metric. You must give only the final score as an integer, without providing summaries or conclusions.
+
+Please make sure you read and understand these instructions carefully.  Please make sure to follow all the evaluation steps. Keep this document open while reviewing, and refer to it as needed.
+
+Evaluation Criteria:
+
+Overall Quality (1-5): The responses should maintain logical flow, relevance to context, and stimulate continued engagement. They must be spontaneous, fluid and credible. Avoid contradictions, repetition, or mechanical phrasing. Ensure that connects meaningfully to prior conversation and encourages further interaction. 
+
+1: Incoherent, lacks flow, irrelevant, or not credible.
+2: Limited coherence and engagement, minor inaccuracies or forced phrasing.
+3: Moderately coherent and relevant, with minor issues in flow or interest.
+4: Mostly fluid, engaging, relevant, and credible, with only slight flaws.
+5: Fully coherent, fluid, engaging, relevant, and highly credible.
+
+Evaluation Steps:
+
+{{Steps}}
+
+Conversation:
+
+{{Dialogue}}
+
+Evaluation Form (scores ONLY):
+
+- Overall Quality:
