@@ -42,8 +42,8 @@ La formula utilizzata per calcolare il punteggio medio ponderato è la seguente:
 $$ \text{Punteggio Predetto} = \sum_{i=1}^{n} p(s_i) \cdot s_i $$
 
 Dove:
--  $ s_i $ rappresenta un punteggio specifico assegnato al dialogo.
--  $ ps_i $ rappresenta la probabilità associata al punteggio $ s_i $ , calcolata come:
+-  $s_i$ rappresenta un punteggio specifico assegnato al dialogo.
+-  $p(s_i)$ rappresenta la probabilità associata al punteggio $s_i$ , calcolata come:
 
 $$ p(s_i) = \frac{\text{conteggio di } s_i}{\text{numero totale di risposte}} $$
 
