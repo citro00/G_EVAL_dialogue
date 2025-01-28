@@ -105,8 +105,7 @@ Ecco un esempio della struttura dei dati trasformati per l'analisi dei dialoghi:
       }
     ],
     "score": "Valore numerico (float) che rappresenta lo score o la qualità del dialogo",
-    "system_id": "Identificativo del sistema (ad es. chatbot1.json)",
-    "system_output": "Output finale fornito dal sistema"
+    "system_id": "Identificativo del sistema (ad es. chatbot1.json)"
   }
 ]
 
