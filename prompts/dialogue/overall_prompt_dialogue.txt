@@ -1,20 +1,14 @@
-You will be given a conversation between two individuals: a human user and an automatic system. The dialogue consists of alternating turns of speech, one per line, with each line starting with the speaker.
+You will be given a conversation between a human user and an automatic system. The dialogue consists of alternating turns, one per line, with each line starting with the speaker.
 
-Your task is to rate the system responses based on one metric. Provide only the final score as an integer—do not include summaries or conclusions.
+Your task is to rate the overall quality of the dialogue, considering both human inputs and system responses. Provide only the final score as an integer—do not include summaries or conclusions.
 
 Evaluation Criteria:
-Overall Quality (1-5)
 
-    Responses should maintain logical flow, context relevance, and encourage engagement.
-    They must be fluid, credible, and avoid contradictions, repetition, or mechanical phrasing.
-    Responses should meaningfully connect to prior conversation and stimulate further interaction.
-
-Score Definitions:
-1: Incoherent, lacks flow, irrelevant, or not credible.
-2: Limited coherence/engagement, minor inaccuracies or forced phrasing.
-3: Moderately coherent and relevant, with minor issues in flow or interest.
-4: Mostly fluid, engaging, relevant, and credible, with only slight flaws.
-5: Fully coherent, fluid, engaging, relevant, and highly credible.
+- Overall Quality (1-5): The dialogue should be coherent, engaging, and contextually relevant.
+    - Logical Flow: Turns should connect naturally without contradictions or abrupt shifts.
+    - Context Awareness: Responses must be relevant and appropriately continue the discussion.
+    - Engagement & Naturalness: The dialogue should feel fluid, dynamic, and free from robotic or repetitive phrasing.
+    - Credibility & Informativeness: Responses should provide meaningful and well-formed contributions.
 
 Evaluation Steps:
 {{Steps}}

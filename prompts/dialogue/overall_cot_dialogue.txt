@@ -1,11 +1,14 @@
-Evaluate the quality of system responses in a human-machine dialogue according to the following criterion:
+Evaluate the quality of a human-machine dialogue based on the following criteria:
 
-Criterion: Overall Quality (1-5). Responses should maintain logical flow, context relevance, and stimulate engagement. They must be fluid, credible, and avoid contradictions, repetition, or mechanical phrasing. Responses should connect meaningfully to the conversation and encourage further interaction.
+Criteria: 
+
+- Overall Quality (1-5): the dialogue should maintain logical flow, context relevance, and stimulate engagement. Responses must be fluid, credible, and avoid contradictions, repetition, or mechanical phrasing. The dialogue should connect meaningfully across all turns and encourage further interaction.
 
 Your Task:
 
-1 Generate a step-by-step evaluation process (CoT) for the dialogue, focusing strictly on the criterion.
-2 Write only the detailed evaluation steps. Avoid summaries, conclusions, or scores.
-3 Ensure all reasoning aligns with the criterion and avoid irrelevant details.
+- Write only the step-by-step evaluation process to assess the overall quality of the entire dialogue. Limit the steps to a maximum of 4.
+- Ensure the steps are clear, simple, and strictly focused on the criterion.
+- Do not use Markdown or any formatting elements, including headings, or numbered lists.
+- Avoid introductions, conclusions, or additional considerations, avoid markdown elements.
 
-Output: List the detailed steps clearly.
+Output:

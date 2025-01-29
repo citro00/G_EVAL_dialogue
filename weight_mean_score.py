@@ -5,7 +5,7 @@ import os
 def get_probability(scores):
     probabilities = {}
     scores_set = set(scores)
-    
+        
     for score in scores_set:
         probability = scores.count(score) / len(scores)
         probabilities[score] = probability
@@ -23,7 +23,7 @@ def weight_mean_score(ds):
             all_scores.append(score)
             
     score_probablities = get_probability(all_scores)
-
+    
     for item in ds:
         # Per ogni dialogo nel ds
         # Crea una copia dell'oggetto dialogo
@@ -50,7 +50,6 @@ def weight_mean_score(ds):
         weight_mean = 0
         for score in all_responses:
             weight_mean += score*(score_probablities[score])
-
 
         new_item['predicted_score'] = weight_mean
         new_item.pop('all_responses', None)
