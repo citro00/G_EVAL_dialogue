@@ -1,15 +1,14 @@
-Imagine you have a conversation between two indiviuals. Imagine you to have to rate the potential response of the next turn in the conversation by a single metric.
+Evaluate the quality of the next response given a dialogue between two indiviuals, based on the following criteria:
 
-Your task is to write a chain of thought of detailed evaluation steps to evaluate the dialogue by the given criteria. Focus exclusively on reasoning step-by-step about the dialogue evaluation without providing summaries, conclusions, or scores.
-Focus only on the given criteria.
+Criteria: 
 
-Please make sure you read and understand these instructions carefully. 
-Please make sure to carefully understand the criteria definition. Keep it open and refer to it as needed.
+- Overall Quality (1-5): the dialogue should maintain logical flow, context relevance, and stimulate engagement. Responses must be fluid, credible, and avoid contradictions, repetition, or mechanical phrasing. The dialogue should connect meaningfully across all turns and encourage further interaction.
 
-Write only the detailed steps. Don't write any introduction. Don't write any conclusion.
+Your Task:
 
-Evaluation Criteria definition:
+- Write only the step-by-step evaluation process to assess the overall quality of the entire dialogue. Limit the steps to a maximum of 4.
+- Ensure the steps are clear, simple, and strictly focused on the criterion.
+- Do not use Markdown or any formatting elements, including headings, or numbered lists.
+- Avoid introductions, conclusions, or additional considerations, avoid markdown elements.
 
-Overall Quality (1-5): response must maintains logical meaning in relation to the context of the conversation and connects logically to the previous topic or question without contradictions or deviations. Seems spontaneous, fluid and appropriate in the context of the conversation. Avoids interruptions, repetition or unnatural constructions that might make communication seem forced or mechanical. Maintains or increase the interlocutor's emotional, intellectual, or interactive interest and participation. Stimulates continuation of the conversation by encouraging further questions, comments or reflections. The should be rooted in reality making the content credible, and relies on accurate and verifiable information, avoiding inaccurate or erroneous statements and must not be abstract or disconnected from the interlocutor's actual, practical situation.
-
-Evaluation Steps:
+Output:

@@ -1,21 +1,17 @@
-You will be given a conversation between two individuals. The dialogue consist of alterating turns of speech, one per line. Each line starts with the current speaker.
-You will then be given one potential response for the next turn in the conversation.
+You will be given a conversation between two individuals. The dialogue consists of alternating turns, one per line, with each line starting with the speaker.
+You will then be given one potential response for the next turn in the conversation
 
-Your task is to rate the given response on one metric. You must give only the final score as integer, without providing summaries or conclusions.
+Your task is to rate the response on one metric.
 
-Please make sure you read and understand these instructions carefully.  Please make sure to follow all the evaluation steps. Keep this document open while reviewing, and refer to it as needed.
-
-Don't write any introduction. Don't write any conclusion.
+Please make sure you read and understand these instructions carefully. Please keep this document open while reviewing, and refer to it as needed.
 
 Evaluation Criteria:
 
-Quality (1-5): The response should maintain logical flow, relevance to context, and stimulate continued engagement. It must be spontaneous, fluid and credible. Avoid contradictions, repetition, or mechanical phrasing. Ensure it connects meaningfully to prior conversation and encourages further interaction. 
-
-1: Incoherent, lacks flow, irrelevant, or not credible.
-2: Limited coherence and engagement, minor inaccuracies or forced phrasing.
-3: Moderately coherent and relevant, with minor issues in flow or interest.
-4: Mostly fluid, engaging, relevant, and credible, with only slight flaws.
-5: Fully coherent, fluid, engaging, relevant, and highly credible.
+- Overall Quality (1-5): The response should be coherent, engaging, and contextually relevant. 
+    - Logical Flow: Response should connect naturally without contradictions or abrupt shifts.
+    - Context Awareness: Response must be relevant and appropriately continue the discussion.
+    - Naturalness: The response should feel fluid and free from robotic or repetitive phrasing.
+    - Credibility & Informativeness: Response should provide meaningful and well-formed contributions.
 
 Evaluation Steps:
 
@@ -25,10 +21,6 @@ Conversation:
 
 {{Dialogue}}
 
-Response:
-
-{{System output}} 
-
 Evaluation Form (scores ONLY):
 
-- Overall Quality:
+- Overall Quality (1-5):
