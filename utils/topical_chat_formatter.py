@@ -19,16 +19,14 @@ def main():
         turns_list = turns_scr.split("\n")
         turns_obj = [{"speaker": speakers[i % 2], "utterance": turns_list[i].strip()} for i in range(len(turns_list)) if turns_list[i].strip() != ""]
         dialog_id = "dm-test-" + str(abs(hash(turns_scr)))
-        score = dialog['scores'][args.dimension]
-        system_id = dialog['system_id']
-        system_output = dialog['system_output']
 
         output_obj.append({
             "dialog_id": dialog_id,
             "turns": turns_obj,
-            "scores": score,
-            "system_id": system_id,
-            "system_output": system_output
+            "score": dialog['scores'][args.dimension],
+            "system_id": dialog['system_id'],
+            "system_output": dialog['system_output'],
+            "context": dialog['context']
         })
 
     print(f"Number of dialogs: {len(output_obj)}")
