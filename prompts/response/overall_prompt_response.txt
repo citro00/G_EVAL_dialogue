@@ -1,7 +1,7 @@
 You will be given a conversation between two individuals. The dialogue consists of alternating turns, one per line, with each line starting with the speaker.
-You will then be given one potential response for the next turn in the conversation
+You will then be given one potential response for the next turn in the conversation.
 
-Your task is to rate the response on one metric.
+Your task is to rate the response on one metric. Provide only the final score as an integer—do not include summaries or conclusions.
 
 Please make sure you read and understand these instructions carefully. Please keep this document open while reviewing, and refer to it as needed.
 
@@ -20,6 +20,10 @@ Evaluation Steps:
 Conversation:
 
 {{Dialogue}}
+
+Response:
+
+{{System output}}
 
 Evaluation Form (scores ONLY):
 

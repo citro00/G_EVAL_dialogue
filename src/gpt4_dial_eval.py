@@ -3,7 +3,7 @@ import json
 import argparse
 import tqdm
 import time
-from automatic_cot import *
+from utils.automatic_cot import *
 from utils.handler_outlier import *
 
 if __name__ == '__main__':
@@ -11,7 +11,7 @@ if __name__ == '__main__':
     argparser = argparse.ArgumentParser()
     argparser.add_argument('--prompt-fp', type=str, default='prompts/dialogue/overall_prompt_dialogue.txt')
     argparser.add_argument('--save-fp', type=str, default='results/llama_overall_detailed_dial.json')
-    argparser.add_argument('--summeval-fp', type=str, default='data/transformed_data_dial.json')
+    argparser.add_argument('--dataset-fp', type=str, default='data/transformed_data_dial.json')
     argparser.add_argument('--model', type=str, default='Llama 3 8B Instruct')
     argparser.add_argument('--cot-prompt', type=str, default='prompts/dialogue/overall_cot_dialogue.txt')
     argparser.add_argument('--instances', type=int, default=None)
@@ -21,7 +21,7 @@ if __name__ == '__main__':
     openai.api_key = "not needed for a local LLM"
     openai.base_url = "http://localhost:4891/v1/"
 
-    topical_chat = list(json.load(open(args.summeval_fp)))
+    topical_chat = list(json.load(open(args.dataset_fp)))
     if args.instances:
         topical_chat = topical_chat[:args.instances]
 
@@ -34,22 +34,22 @@ if __name__ == '__main__':
     
     eval_steps = generate_cot(model, args.cot_prompt)
         
-    print(f"Steps: {eval_steps}")
     prompt = prompt.replace('{{Steps}}', eval_steps)
-    print(f"len(topical_chat): {len(topical_chat)}")
     ct_tmp = 0
     for instance in tqdm.tqdm(topical_chat):
         ct_tmp += 1
         turns = instance['turns']
         
         # Commentare la lina seguente se l'esecuzione è sull'intero dialogo. Nel caso della valutazione di risposta lasciare attiva
-        #system_output = instance['system_output']
+        system_output = instance['system_output']
+        
         dialogue = [f"{item['speaker']}: {item['utterance']}  \n" for item in turns]
         dialogue = "".join(dialogue)
         cur_prompt = prompt.replace('{{Dialogue}}', dialogue)
         
         # Commentare la lina seguente se l'esecuzione è sull'intero dialogo. Nel caso della valutazione di risposta lasciare attiva
-        #cur_prompt = cur_prompt.replace('{{System output}}', system_output)
+        cur_prompt = cur_prompt.replace('{{System output}}', system_output)
+        
         instance['prompt'] = cur_prompt
         while True:
             try:
@@ -64,7 +64,7 @@ if __name__ == '__main__':
                     stop=None,
                     stream=False,
                     #logprobs=True,
-                    n=25,
+                    n=20,
                 )
 
                 #time.sleep(0.5)
