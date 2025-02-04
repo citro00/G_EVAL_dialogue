@@ -2,7 +2,7 @@ Evaluate the quality of the next response given a dialogue between two indiviual
 
 Criteria: 
 
-- Overall Quality (1-5): the dialogue should maintain logical flow, context relevance, and stimulate engagement. Responses must be fluid, credible, and avoid contradictions, repetition, or mechanical phrasing. The dialogue should connect meaningfully across all turns and encourage further interaction.
+- Overall Quality (1-5): The response should be coherent, engaging, and contextually relevant.
 
 Your Task:
 
