@@ -6,7 +6,7 @@ Criteria:
 
 Your Task:
 
-- Write only the step-by-step evaluation process to assess the overall quality of the entire dialogue. Limit the steps to a maximum of 4.
+- Write only the step-by-step evaluation process to assess the overall quality of the response. Limit the steps to a maximum of 4.
 - Ensure the steps are clear, simple, and strictly focused on the criterion.
 - Do not use Markdown or any formatting elements, including headings, or numbered lists.
 - Avoid introductions, conclusions, or additional considerations, avoid markdown elements.
