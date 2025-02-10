@@ -85,6 +85,21 @@ $$ p(s_i) = \frac{\text{numero di occorrenze } s_i}{\text{n}} $$
 - `transformed_data_dial.json`: Dialoghi strutturati per analisi, arricchiti con identificatori di dialogo (_dialog_id_) e turni.
 - `transformed_data_response.json`: Dataset di risposte elaborate dai modelli.
 
+#### 3. **Dataset Topical Chat**
+Questo progetto utilizza anche il dataset **Topical Chat**, un insieme di conversazioni focalizzate su argomenti specifici per valutare la coerenza, la fluidità e l'engagement delle risposte generate dai modelli di NLG.
+
+- **`topical_chat.json`**: Dataset originale contenente le conversazioni grezze.
+- **`topical_chat_formatted.json`**: Versione strutturata del dataset originale con `dialog_id`, `turns`, `system_output`, `score`.
+- **`topical_chat_formatted_overall_res.json`**: Versione contenente i punteggi calcolati automaticamente.
+- **`llama_overall_detailed_response_tc.json`**: Dataset con valutazioni dettagliate effettuate da un modello LLM.
+### **Script di Elaborazione per Topical Chat**
+Abbiamo incluso diversi script Python per l'elaborazione dei dati di **Topical Chat**:
+
+- **`topical_chat_formatter.py`**: Trasforma i dati grezzi di Topical Chat in un formato JSON strutturato.
+- **`gpt4_dial_eval.py`**: Utilizza un modello LLM per assegnare punteggi alle risposte nei dialoghi.
+- **`weight_mean_score.py`**: Determina un punteggio medio ponderato basato sulle valutazioni multiple per ogni dialogo.
+- **`meta_eval_topical_chat.py`**: Confronta i punteggi predetti dai modelli con i giudizi umani.
+
 ---
 
 ### Esempio di `transformed_data_response.json`
@@ -169,7 +184,7 @@ Per iniziare, assicurarsi di avere Python 3.7+ e installare le dipendenze:
 pip install openai tqdm prettytable scipy
 ```
 
-### Esempi di Esecuzione
+### **Esempi di Esecuzione per dstc9**
 
 1. **Generazione del Chain-of-Thoughts:**
    ```bash
@@ -191,9 +206,33 @@ pip install openai tqdm prettytable scipy
    python3 transform_dataset.py --input_fp "data/dstc9_data.json"
    ```
 
+### **Esempi di Esecuzione per Topical Chat**
+
+1. **Formattazione del Dataset:**
+   ```bash
+   python3 topical_chat_formatter.py --input_fp "data/topical_chat.json" --output_fp "data/topical_chat_formatted.json"
+   ```
+
+2. **Valutazione Automatica con LLM:**
+   ```bash
+   python3 gpt4_dial_eval.py --dataset-fp "data/topical_chat_formatted.json" --save-fp "results/llama_overall_detailed_response_tc.json"
+   ```
+
+3. **Calcolo della Media Pesata:**
+   ```bash
+   python3 weight_mean_score.py --result "results/llama_overall_detailed_response_tc.json" --output-fp "results/overall_mean_response_tc.json"
+   ```
+
+4. **Analisi delle Correlazioni:**
+   ```bash
+   python3 meta_eval_topical_chat.py --input_fp "results/overall_mean_response_tc.json"
+   ```
+
 ---
 
+
 ## Risorse
+-**Dataset Topical Chat:** [Paper e Dataset](https://github.com/alexa/topical-chat)
 - **Articolo di riferimento:** [G-EVAL: NLG Evaluation using GPT-4](https://arxiv.org/abs/2301.13848)
 - **Repository GitHub di supporto:** [geval](https://github.com/nlpyang/geval)
 
