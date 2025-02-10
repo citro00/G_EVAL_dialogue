@@ -43,9 +43,10 @@ $$ \text{Punteggio Predetto} = \sum_{i=1}^{n} p(s_i) \cdot s_i $$
 
 Dove:
 -  $s_i$ rappresenta un punteggio specifico assegnato al dialogo.
--  $p(s_i)$ rappresenta la probabilità associata al punteggio $s_i$ , calcolata come:
+-  $p(s_i)$ rappresenta la probabilità associata al punteggio $s_i$.
+-  Sia $n$ il numero di punteggi generati dall'LLM per ogni dialogo la probabilità $p(s_i)$ puo essere calcolata come: 
 
-$$ p(s_i) = \frac{\text{conteggio di } s_i}{\text{numero totale di risposte}} $$
+$$ p(s_i) = \frac{\text{numero di occorrenze } s_i}{\text{n}} $$
 
 #### 3. **Analisi Statistica delle Correlazioni**
 - **Classe:** `calculate_correlation.py`
