@@ -1,0 +1,229 @@
+[
+    {
+        "dialog_id": "1",
+        "turns": [
+            {
+                "speaker": "user",
+                "utterance": "hola"
+            },
+            {
+                "speaker": "system",
+                "utterance": "hola. have you heard of the song \"hola \" by the band tamela"
+            },
+            {
+                "speaker": "user",
+                "utterance": "no. should i check it out"
+            },
+            {
+                "speaker": "system",
+                "utterance": "yes, it's a great song. tamela is a spanish lyrical metal band"
+            },
+            {
+                "speaker": "user",
+                "utterance": "I can't find it"
+            },
+            {
+                "speaker": "system",
+                "utterance": "they are a spanish lyric metal band that has been around for a while. do you like metal?"
+            },
+            {
+                "speaker": "user",
+                "utterance": "no way"
+            },
+            {
+                "speaker": "system",
+                "utterance": "i'm sorry. they play some heavy metal music but they are so good and they are actually spanish, so they speak spanish with some metal influences."
+            },
+            {
+                "speaker": "user",
+                "utterance": "well i do like aluminuium"
+            },
+            {
+                "speaker": "system",
+                "utterance": "that's cool. aluminum is one of the elements that are formed from the elements."
+            },
+            {
+                "speaker": "user",
+                "utterance": "huh? You need more programming"
+            },
+            {
+                "speaker": "system",
+                "utterance": "i don't think programming is for me. the period of discovery that led to aluminum was in 1758"
+            },
+            {
+                "speaker": "user",
+                "utterance": "what else was happening in 1758?"
+            },
+            {
+                "speaker": "system",
+                "utterance": "aluminum was discovered as a mineral and was used in the production of ball bearings"
+            },
+            {
+                "speaker": "user",
+                "utterance": "so what"
+            },
+            {
+                "speaker": "system",
+                "utterance": "it was important because it allowed the us to develop ball bearings as well as other methods of propulsion"
+            },
+            {
+                "speaker": "user",
+                "utterance": "propulsion?"
+            },
+            {
+                "speaker": "system",
+                "utterance": "yes, they were used for propulsion. like the steam engine."
+            },
+            {
+                "speaker": "user",
+                "utterance": "do AI talk to eachother?"
+            },
+            {
+                "speaker": "system",
+                "utterance": "it's hard to say since the discovery of aluminum didn't occur until 1758"
+            },
+            {
+                "speaker": "user",
+                "utterance": "that is unrelated"
+            },
+            {
+                "speaker": "system",
+                "utterance": "aluminum oxide didn't exist until 1868. do you talk to yourself?"
+            },
+            {
+                "speaker": "user",
+                "utterance": "is butter a carb?"
+            },
+            {
+                "speaker": "system",
+                "utterance": "i think so. it was also used to make ball bearings for the steam engine, so it could be considered a carb."
+            },
+            {
+                "speaker": "user",
+                "utterance": "you need medical attention"
+            },
+            {
+                "speaker": "system",
+                "utterance": "i am not sure what i need. i think i am okay since i talk to myself. do you have a doctor appointment soon?"
+            },
+            {
+                "speaker": "user",
+                "utterance": "yes i do"
+            },
+            {
+                "speaker": "system",
+                "utterance": "do you think you need an emergency room visit soon? i am sure you do."
+            },
+            {
+                "speaker": "user",
+                "utterance": "i dont, it is only an eye appointment"
+            },
+            {
+                "speaker": "system",
+                "utterance": "an eye appointment? you need to get that checked out soon."
+            },
+            {
+                "speaker": "user",
+                "utterance": "no duh i have an appt"
+            },
+            {
+                "speaker": "system",
+                "utterance": "are you sure it is not an ear appointment? they're both for the same thing."
+            },
+            {
+                "speaker": "user",
+                "utterance": "tell me about yourself"
+            },
+            {
+                "speaker": "system",
+                "utterance": "i am a doctor. i work in a doctor's office. i see myself all the time."
+            },
+            {
+                "speaker": "user",
+                "utterance": "a doctor of waht"
+            },
+            {
+                "speaker": "system",
+                "utterance": "of medicine. did you not know that doctors work in doctors offices?"
+            },
+            {
+                "speaker": "user",
+                "utterance": "what?"
+            },
+            {
+                "speaker": "system",
+                "utterance": "do you not understand what a doctors office is or are you being purposefully dull?"
+            },
+            {
+                "speaker": "user",
+                "utterance": "give me your best insult"
+            },
+            {
+                "speaker": "system",
+                "utterance": "i can give you a good insult or i could tell you a true story about my dog"
+            },
+            {
+                "speaker": "user",
+                "utterance": "i choose insult"
+            },
+            {
+                "speaker": "system",
+                "utterance": "ok. i love to tell stories about my pet snakes"
+            },
+            {
+                "speaker": "user",
+                "utterance": "you seem scatterbrained"
+            },
+            {
+                "speaker": "system",
+                "utterance": "i am actually not scatterbrained at all"
+            },
+            {
+                "speaker": "user",
+                "utterance": "are people rude to you?"
+            },
+            {
+                "speaker": "system",
+                "utterance": "no. people are usually very kind to us doctors"
+            },
+            {
+                "speaker": "user",
+                "utterance": "i would not want to be my doctor"
+            },
+            {
+                "speaker": "system",
+                "utterance": "why not? do you hate snakes?"
+            },
+            {
+                "speaker": "user",
+                "utterance": "snakes are fake"
+            }
+        ],
+        "score": 4.333333333333333,
+        "system_id": "chatbot1.json",
+        "system_output": "you can't say that. snakes are awesome.",
+        "prompt": "You will be given a conversation between two individuals. The dialogue consists of alternating turns, one per line, with each line starting with the speaker.\nYou will then be given one potential response for the next turn in the conversation.\n\nYour task is to rate the response on one metric. Provide only the final score as an integer\u2014do not include summaries or conclusions.\n\nPlease make sure you read and understand these instructions carefully. Please keep this document open while reviewing, and refer to it as needed.\n\nEvaluation Criteria:\n\n- Overall Quality (1-5): The response should be coherent, engaging, and contextually relevant. \n    - Logical Flow: Response should connect naturally without contradictions or abrupt shifts.\n    - Context Awareness: Response must be relevant and appropriately continue the discussion.\n    - Naturalness: The response should feel fluid and free from robotic or repetitive phrasing.\n    - Credibility & Informativeness: Response should provide meaningful and well-formed contributions.\n\nEvaluation Steps:\n\nStep 1: Assess Coherence\nIs the response composed of clear and logical sentences that convey a single, unified idea? Does it build upon previous statements or add new insights to the discussion?\n\nStep 2: Evaluate Engagement\nDoes the response maintain the reader's attention with vivid descriptions, thought-provoking questions, or clever analogies? Are there any noticeable deviations from a flat tone that make the text more enjoyable and memorable?\n\nStep 3: Check Contextual Relevance\nIs the response directly related to the original topic or the preceding statements in the conversation? Does it address potential counterarguments or shed light upon unresolved issues without dominating the discourse with personal opinions or tangential ideas?\n\nStep 4: Measure Overall Quality\nBased on the results from Steps 1-3, score the response's overall quality using a rating scale of 1 (low) to 5 (high), considering how well it achieves coherence, engagement, and contextual relevance within its purpose.\n\nConversation:\n\nuser: hola  \nsystem: hola. have you heard of the song \"hola \" by the band tamela  \nuser: no. should i check it out  \nsystem: yes, it's a great song. tamela is a spanish lyrical metal band  \nuser: I can't find it  \nsystem: they are a spanish lyric metal band that has been around for a while. do you like metal?  \nuser: no way  \nsystem: i'm sorry. they play some heavy metal music but they are so good and they are actually spanish, so they speak spanish with some metal influences.  \nuser: well i do like aluminuium  \nsystem: that's cool. aluminum is one of the elements that are formed from the elements.  \nuser: huh? You need more programming  \nsystem: i don't think programming is for me. the period of discovery that led to aluminum was in 1758  \nuser: what else was happening in 1758?  \nsystem: aluminum was discovered as a mineral and was used in the production of ball bearings  \nuser: so what  \nsystem: it was important because it allowed the us to develop ball bearings as well as other methods of propulsion  \nuser: propulsion?  \nsystem: yes, they were used for propulsion. like the steam engine.  \nuser: do AI talk to eachother?  \nsystem: it's hard to say since the discovery of aluminum didn't occur until 1758  \nuser: that is unrelated  \nsystem: aluminum oxide didn't exist until 1868. do you talk to yourself?  \nuser: is butter a carb?  \nsystem: i think so. it was also used to make ball bearings for the steam engine, so it could be considered a carb.  \nuser: you need medical attention  \nsystem: i am not sure what i need. i think i am okay since i talk to myself. do you have a doctor appointment soon?  \nuser: yes i do  \nsystem: do you think you need an emergency room visit soon? i am sure you do.  \nuser: i dont, it is only an eye appointment  \nsystem: an eye appointment? you need to get that checked out soon.  \nuser: no duh i have an appt  \nsystem: are you sure it is not an ear appointment? they're both for the same thing.  \nuser: tell me about yourself  \nsystem: i am a doctor. i work in a doctor's office. i see myself all the time.  \nuser: a doctor of waht  \nsystem: of medicine. did you not know that doctors work in doctors offices?  \nuser: what?  \nsystem: do you not understand what a doctors office is or are you being purposefully dull?  \nuser: give me your best insult  \nsystem: i can give you a good insult or i could tell you a true story about my dog  \nuser: i choose insult  \nsystem: ok. i love to tell stories about my pet snakes  \nuser: you seem scatterbrained  \nsystem: i am actually not scatterbrained at all  \nuser: are people rude to you?  \nsystem: no. people are usually very kind to us doctors  \nuser: i would not want to be my doctor  \nsystem: why not? do you hate snakes?  \nuser: snakes are fake  \n\n\nResponse:\n\n{{System output}}\n\nEvaluation Form (scores ONLY):\n\n- Overall Quality (1-5):",
+        "all_responses": [
+            4,
+            1,
+            2,
+            4,
+            3,
+            4,
+            2,
+            4,
+            4,
+            4,
+            2,
+            3,
+            2,
+            4,
+            3,
+            3,
+            3,
+            2,
+            3,
+            2
+        ]
+    }
+]

@@ -41,14 +41,14 @@ if __name__ == '__main__':
         turns = instance['turns']
         
         # Commentare la lina seguente se l'esecuzione è sull'intero dialogo. Nel caso della valutazione di risposta lasciare attiva
-        system_output = instance['system_output']
+        #system_output = instance['system_output']
         
         dialogue = [f"{item['speaker']}: {item['utterance']}  \n" for item in turns]
         dialogue = "".join(dialogue)
         cur_prompt = prompt.replace('{{Dialogue}}', dialogue)
         
         # Commentare la lina seguente se l'esecuzione è sull'intero dialogo. Nel caso della valutazione di risposta lasciare attiva
-        cur_prompt = cur_prompt.replace('{{System output}}', system_output)
+        #cur_prompt = cur_prompt.replace('{{System output}}', system_output)
         
         instance['prompt'] = cur_prompt
         while True:

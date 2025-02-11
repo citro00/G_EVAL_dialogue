@@ -1,0 +1,3 @@
+/bin/python /home/mattia/GitHub/G_EVAL_dialogue/src/gpt4_dial_eval.py --prompt-fp prompts/dialogue/overall_prompt_dialogue.txt --save-fp results/dialogue/llama_overall_detailed_dial_dstc_0402.json --datast-fp data/dstc9/dstc9_formatted_dial.json --cot-prompt prompts/dialogue/overall_cot_dialogue.txt --instances 1
+
+/bin/python /home/mattia/GitHub/G_EVAL_dialogue/src/weight_mean_score.py 
